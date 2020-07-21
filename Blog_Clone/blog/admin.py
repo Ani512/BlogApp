@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Post
 
-# Register your models here.
+admin.site.register(Post)
+# Helps in creating an easy way to access the Posts
