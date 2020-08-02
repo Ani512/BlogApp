@@ -9,7 +9,7 @@
       alt="/Blog_Clone/media/default.jpg">
    <div class="media-body">
       <div class="article-metadata">
-         <a class="mr-2" href="#">{{ object.author }}</a>
+         <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
          <small class="text-muted">{{ object.date_posted|date:"l, F d Y" }}</small>
       </div>
       <h2 class="article-title">{{ object.title }}</h2>
@@ -18,7 +18,7 @@
 </article>
 {% if object.author == user %}
 <div id="update-footer" class="offset-5">
-   <a class="btn btn-info btn-md" href="{% url 'post-update' object.id %}">Update</a>
+   <a class="btn btn-outline-info btn-md" href="{% url 'post-update' object.id %}">Update</a>
    <a class="btn btn-danger btn-md ml-2" href="{% url 'post-delete' object.id %}">Delete</a>
 </div>
 {% endif %}
